@@ -109,7 +109,7 @@ var alunos = [
         },
         {
             "foto"  : "https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-8-avatar-2754583_120515.png",
-            "nome"  : "ANDERSON GERÔNCIO SOUZA SILVA",
+            "nome"  : "Anderson Gerôncio Souza Silva",
             "matricula" : "20151001004",
             "sexo"  :   "M",
             "curso" : [
@@ -523,7 +523,7 @@ var alunos = [
         },
         {
             "foto"  : "https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-4-avatar-2754580_120522.png",
-            "nome"  : "HÉLIDA BENTO DE OLIVEIRA LINS",
+            "nome"  : "Hélida Bento de Oliveira Lins",
             "matricula" : "20151001016",
             "sexo"  :   "F",
             "curso" : [
@@ -577,7 +577,7 @@ var alunos = [
         },
         {
             "foto"  : "https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-8-avatar-2754583_120515.png",
-            "nome"  : "Isaasc de Sousa Araújo",
+            "nome"  : "Isaac de Sousa Araújo",
             "matricula" : "20151001019",
             "sexo"  :   "M",
             "curso" : [
@@ -685,10 +685,77 @@ var alunos = [
         }
     ];
 
-const getStudents = () => {
+const getStudentsName = (code) => {
+    let registration = code
+    let student = {}
+    let studentsName = []
+    let error = true
 
+    if(registration != undefined) {
+        if(registration != '') {
+            alunos.forEach(item => {
+                if(item.matricula.includes(registration)) {
+                    studentsName.push(item.nome)
+                    error = false
+                }
+            })
+        }
+        student.name = studentsName
+    }
+
+    if(error) {
+        return false
+    } else {
+        return student
+    }
+}
+
+const getAllStudents = () => {
+    let allStudents = {}
+    let studentsName = []
+    let error = true
 
     alunos.forEach(item => {
-        item.curso
+        studentsName.push(item.nome)
+        error = false
     })
+    allStudents.total = studentsName.length
+    allStudents.students = studentsName
+
+    if(error) {
+        return false 
+    } else {
+        return allStudents
+    }
+}
+
+const getStudentByCourse = (code) => {
+    let course = code.toLowerCase()
+    let students = {}
+    let studentsName = []
+    let error = true
+
+    alunos.forEach(item => {
+        item.curso.forEach(item2 => {
+            if(item2.nome.toLowerCase().includes(course)) {
+                studentsName.push(item.nome)
+                error = false
+            }
+            students.students = studentsName
+        })
+    })
+
+    if (error) {
+        return false
+    } else {
+        return students
+    }
+}
+
+
+
+module.exports = {
+    getStudentsName,
+    getAllStudents,
+    getStudentByCourse
 }

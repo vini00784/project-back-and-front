@@ -12,3 +12,27 @@ var cursos = [
         "carga" :   "1200"
     }
 ];
+
+const getCoursesName = () => {
+    let courses = {}
+    let coursesName = []
+    let error = true
+
+    cursos.forEach(item => {
+        coursesName.push(item.nome)
+        error = false
+    })
+
+    courses.courses = coursesName
+    
+    if(error) {
+        return false
+    } else {
+        return courses
+    }
+
+}
+
+module.exports = {
+    getCoursesName
+}
