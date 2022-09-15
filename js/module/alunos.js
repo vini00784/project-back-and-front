@@ -735,6 +735,12 @@ const getStudentByCourse = (code) => {
     let studentsName = []
     let error = true
 
+    if(code != undefined) {
+        if(code != '') {
+            
+        }
+    }
+    
     alunos.forEach(item => {
         item.curso.forEach(item2 => {
             if(item2.nome.toLowerCase().includes(course)) {
@@ -752,7 +758,11 @@ const getStudentByCourse = (code) => {
     }
 }
 
-
+const getStudentByStatus = (code) => {
+    let status = code.toLowerCase()
+    let students = {}
+    let studentsName = []
+}
 
 module.exports = {
     getStudentsName,
