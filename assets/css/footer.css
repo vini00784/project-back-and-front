@@ -1,3 +1,9 @@
 footer {
+    display: flex;
+    height: 150px;
     background-color: var(--background-header-and-footer);
+}
+
+.contact {
+    
 }
