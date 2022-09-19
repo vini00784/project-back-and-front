@@ -1,7 +1,43 @@
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 100px;
     width: 100vw;
     background-color: var(--background-header);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 200px;
+    margin-left: 100px;
+    gap: 10px;
+}
+.logo-text {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.out {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 150px;
+    margin-right: 100px;
+    gap: 10px;
+    /* background-color: aqua; */
+}
+.out-img {
+    height: 50px;
+}
+.out-text{
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
 }
