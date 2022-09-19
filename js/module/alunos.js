@@ -685,6 +685,7 @@ var alunos = [
         }
     ];
 
+// Função que faz o get do aluno com base na matrícula
 const getStudentsName = (code) => {
     let registration = code
     let student = {}
@@ -710,6 +711,7 @@ const getStudentsName = (code) => {
     }
 }
 
+// Função que faz o get de todos os alunos
 const getAllStudents = () => {
     let allStudents = {}
     let studentsName = []
@@ -729,27 +731,26 @@ const getAllStudents = () => {
     }
 }
 
+// Função que faz o get dos alunos cadastrados em determinado curso
 const getStudentByCourse = (code) => {
     let course = code.toLowerCase()
     let students = {}
     let studentsName = []
     let error = true
 
-    if(code != undefined) {
-        if(code != '') {
-            
+    if(course != undefined) {
+        if(course != '') {
+            alunos.forEach(item => {
+                item.curso.forEach(item2 => {
+                    if(item2.nome.toLowerCase().includes(course)) {
+                        studentsName.push(item.nome)
+                        error = false
+                    }
+                    students.students = studentsName
+                })
+            }) 
         }
     }
-    
-    alunos.forEach(item => {
-        item.curso.forEach(item2 => {
-            if(item2.nome.toLowerCase().includes(course)) {
-                studentsName.push(item.nome)
-                error = false
-            }
-            students.students = studentsName
-        })
-    })
 
     if (error) {
         return false
@@ -758,14 +759,100 @@ const getStudentByCourse = (code) => {
     }
 }
 
+// Função que faz o get dos alunos com base no status
 const getStudentByStatus = (code) => {
     let status = code.toLowerCase()
     let students = {}
     let studentsName = []
+    let error = true
+
+    if(status != undefined) {
+        if(status != '') {
+            alunos.forEach(item => {
+                if(item.status.toLowerCase().includes(status)) {
+                    studentsName.push(item.nome)
+                    error = false
+                }
+                students.students = studentsName
+            })
+        }
+    }
+
+    if(error) {
+        return false
+    } else {
+        return students
+    }
+}
+
+// Função para buscar os alunos com base no ano de conclusão
+const getStudentsByConclusionYear = (code) => {
+    let conclusionYear = code
+    let students = {}
+    let studentsName = []
+    let error = true
+
+    if(conclusionYear != undefined) {
+        if(conclusionYear != '') {
+            alunos.forEach(item => {
+                item.curso.forEach(item2 => {
+                    if(item2.conclusao.includes(conclusionYear)) {
+                        studentsName.push(item.nome)
+                        error = false
+                    }
+                    students.students = studentsName
+                })
+            })
+        }
+    }
+
+    if(error) {
+        return false
+    } else {
+        return students
+    }
+}
+
+// Função para buscar as disciplinas e suas média com base na matrícula do aluno
+const getSubjects = (code) => {
+    let registration = code.toLowerCase()
+    let students = {}
+    let studentsSubjects = []
+    let error = true
+
+    if(registration != undefined) {
+        if(registration != '') {
+            alunos.forEach(item => {
+                if(item.matricula.includes(registration)) {
+                    item.curso.forEach(item2 => {
+                        item2.disciplinas.forEach(item3 => {
+                            studentsSubjects.push({
+                                nome : item3.nome,
+                                media : item3.media
+                            })
+                            // studentsSubjects.push(item3.nome)
+                            // studentsSubjects.push(item3.media)
+                            error = false
+                        })
+                        students.subjects = studentsSubjects
+                    })
+                }
+            })
+        }
+    }
+
+    if(error) {
+        return false
+    } else {
+        return students
+    }
 }
 
 module.exports = {
     getStudentsName,
     getAllStudents,
-    getStudentByCourse
+    getStudentByCourse,
+    getStudentByStatus,
+    getStudentsByConclusionYear,
+    getSubjects
 }
