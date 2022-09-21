@@ -37,8 +37,6 @@ const getCoursesName = () => {
 
 }
 
-console.log(getCoursesName())
-
 module.exports = {
     getCoursesName
 }
