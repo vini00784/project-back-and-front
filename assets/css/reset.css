@@ -4,10 +4,13 @@
     margin: 0;
 }
 
-body {
-    list-style: none;
+a {
     text-decoration: none;
-    height: 100vh;
+    color: #FFF;
+}
+
+ul, ol {
+    list-style: none;
 }
 
 :root {
