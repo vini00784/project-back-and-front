@@ -2,4 +2,71 @@ footer {
     display: flex;
     height: 150px;
     background-color: var(--background-header-and-footer);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    font-family: 'Roboto', sans-serif;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* background-color: grey; */
+    height: auto;
+    width: 300px;
+    font-size: 1rem;
+    color: #FFFFFF;
+    gap: 12px 0px;
+}
+.contact i {
+    font-size: 1.3rem;
+}
+
+.phone, .email, .localization {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+.icons-container {
+    display: flex;
+    height: auto;
+    width: 250px;
+    margin-right: 100px;
+    align-items: center;
+    justify-content: center;
+}
+.icons-container ul {
+    display: flex;
+    gap: 20px;
+}
+.icons-container li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    padding: 30px;
+    border: solid 2px #FFFFFF;
+    border-radius: 50%;
+    transition: ease 0.7s;
+}
+.icons-container li:hover {
+    transform: scale(1.15);
+}
+.icons-container i {
+    font-size: 1.5rem;
 }
