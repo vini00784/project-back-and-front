@@ -19,7 +19,11 @@ const getCoursesName = () => {
     let error = true
 
     cursos.forEach(item => {
-        coursesName.push(item.nome)
+        coursesName.push({
+            name: item.nome,
+            abbreviation: item.sigla,
+            icon: item.icone
+        })
         error = false
     })
 
@@ -32,6 +36,8 @@ const getCoursesName = () => {
     }
 
 }
+
+console.log(getCoursesName())
 
 module.exports = {
     getCoursesName
