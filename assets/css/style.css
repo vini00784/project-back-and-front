@@ -1,4 +1,73 @@
 main {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex-grow: 1;
+}
+
+.main-container {
+    height: 65%;
+    width: 100%;
+
+    margin-top: 180px;
+    margin-bottom: 180px;
+    margin-left: 200px;
+    margin-right: 200px;
+    /* background-color: aqua; */
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.devices-info, .student, .courses {
+    display: flex;
+    flex-direction: column;
+    /* background-color: cornflowerblue; */
+}
+.blue {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: var(--background-header-and-footer);
+}
+
+.devices-info {
+    font-family: 'Roboto', sans-serif;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: tomato; */
+}
+.devices-info-text {
+    width: 700px;
+    font-weight: 100;
+    font-size: 3.625rem;
+    margin-top: 50px;
+}
+.devices-img {
+    height: 400px;
+    width: 680px;
+    /* background-color: aqua; */
+}
+
+.student {
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin-right: 200px;
+    margin-left: -100px;
+}
+.student img {
+    height: 650px;
+}
+
+.courses {
+    width: auto;
+    background-color: tomato;
+}
+.course-content {
+    width: 450px;
+    height:250px;
+    background-color: aqua;
 }
