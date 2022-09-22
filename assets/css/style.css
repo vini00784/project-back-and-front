@@ -63,11 +63,26 @@ main {
 }
 
 .courses {
-    width: auto;
-    background-color: tomato;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
 }
 .course-content {
-    width: 450px;
-    height:250px;
-    background-color: aqua;
+    width: 500px;
+    height:300px;
+    background-color: var(--background-header-and-footer);
+    box-shadow: 12px 12px 4px rgba(51, 71, 176, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.course-icon {
+    height: 100px;
+}
+.course-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #FFFFFF;
 }
