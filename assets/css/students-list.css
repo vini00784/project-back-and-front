@@ -36,3 +36,9 @@ main {
     display: flex;
     gap: 8px;
 }
+.menu {
+    margin-left: 95px;
+}
+.subtitle {
+    margin-right: 95px;
+}
