@@ -1,0 +1,25 @@
+.blue {
+    background-color: ;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-color: grey;
+}
+
+.subtitle-container {
+    display: flex;
+    height: 50px;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    background-color: tomato;
+}
+.subtitle {
+    display: flex;
+    gap: 15px;
+}
