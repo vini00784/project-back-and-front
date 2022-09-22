@@ -10,7 +10,7 @@ const createCards = async (json) => {
     const { courses } = json
 
     courses.forEach(element => {
-        const div = document.createElement('a')
+        const div = document.createElement('div')
         div.classList.add('course-content')
     
         const img = document.createElement('img')
