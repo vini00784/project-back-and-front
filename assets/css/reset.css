@@ -20,7 +20,6 @@ ul, ol {
 }
 
 :root {
-    --background-header-and-footer: #3347B0;
-    --background-studying: #3347B0;
+    --default-color: #3347B0;
     --background-finished: #E5B657;
 }

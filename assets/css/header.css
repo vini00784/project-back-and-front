@@ -4,7 +4,7 @@ header {
     align-items: center;
     height: 100px;
     width: 100vw;
-    background-color: var(--background-header-and-footer);
+    background-color: var(--default-color);
 }
 
 .logo {

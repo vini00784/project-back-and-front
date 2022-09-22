@@ -1,5 +1,13 @@
 .blue {
-    background-color: ;
+    background-color: var(--default-color);
+}
+.yellow {
+    background-color: var(--background-finished);
+}
+.blue, .yellow {
+    height: 20px;
+    width: 20px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
 main {
@@ -17,9 +25,14 @@ main {
     width: 100vw;
     justify-content: space-between;
     align-items: center;
-    background-color: tomato;
+    background-color: #BCC2E5;
 }
 .subtitle {
     display: flex;
     gap: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+.studying, .finished {
+    display: flex;
+    gap: 8px;
 }
