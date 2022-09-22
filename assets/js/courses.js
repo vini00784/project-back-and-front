@@ -2,7 +2,7 @@
 
 import { getCourses } from "./coursesFetch.js"
 
-let courses = await getCourses()
+let data = await getCourses()
 
 const createCards = async (json) => {
     const container = document.getElementById('courses')
@@ -38,4 +38,4 @@ const createCards = async (json) => {
     });
 }
 
-createCards(courses)
+createCards(data)
