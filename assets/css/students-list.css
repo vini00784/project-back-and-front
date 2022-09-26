@@ -14,9 +14,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-grow: 1;
-    background-color: grey;
 }
 
 .subtitle-container {
@@ -41,4 +40,22 @@ main {
 }
 .subtitle {
     margin-right: 95px;
+}
+
+.title {
+    font-size: 4rem;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 35px;
+    color: var(--default-color);
+}
+
+.students-container {
+    /* height: 80%; */
+    width: 90%;
+    background-color: tomato;
+}
+.content-container {
+    height: 80%;
+    width: 95%;
+    background-color: aqua;
 }

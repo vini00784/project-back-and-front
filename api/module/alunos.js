@@ -758,7 +758,6 @@ const getStudentByCourse = (code) => {
         return students
     }
 }
-
 // Função que faz o get dos alunos com base no status
 const getStudentByStatus = (code) => {
     let status = code.toLowerCase()
@@ -784,6 +783,38 @@ const getStudentByStatus = (code) => {
         return students
     }
 }
+
+const filterStudentByStatus = (studentCourse, studentStatus) => {
+    let course = studentCourse.toLowerCase()
+    let status = studentStatus.toLowerCase()
+    let students = {}
+    let studentsName = []
+    let error = true
+
+    if(course != undefined && status != undefined) {
+        if(course != '' && status != '') {
+            alunos.forEach(item => {
+                item.curso.forEach(item2 => {
+                    if(item2.sigla.toLowerCase() == course.toLowerCase()) {
+                        if(item.status.toLowerCase.includes(status.toLowerCase())) {
+                            studentsName.push(item.nome)
+                            error = false
+                        }
+                    }
+                })
+            })
+        }
+    }
+    students.students = studentsName
+
+    if(error) {
+        return false
+    } else {
+        return students
+    }
+}
+
+console.log(filterStudentByStatus('rds', 'cursando'))
 
 // Função para buscar os alunos com base no ano de conclusão
 const getStudentsByConclusionYear = (code) => {
