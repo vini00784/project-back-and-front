@@ -742,7 +742,7 @@ const getStudentByCourse = (code) => {
         if(course != '') {
             alunos.forEach(item => {
                 item.curso.forEach(item2 => {
-                    if(item2.nome.toLowerCase().includes(course)) {
+                    if(course.toLowerCase() == item2.sigla.toLocaleLowerCase()) {
                         studentsName.push(item.nome)
                         error = false
                     }
