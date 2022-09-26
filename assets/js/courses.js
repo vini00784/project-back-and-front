@@ -1,8 +1,10 @@
 'use strict'
 
 import { getCourses } from "./coursesFetch.js"
-
+import { createDiv, createImg, createSpan } from './utils/createElements.js'
 let data = await getCourses()
+
+
 
 const createCards = async (json) => {
     const container = document.getElementById('courses')
@@ -10,25 +12,21 @@ const createCards = async (json) => {
     const { courses } = json
 
     courses.forEach(element => {
-        const div = document.createElement('div')
-        div.classList.add('course-content')
-    
-        const img = document.createElement('img')
-        img.classList.add('course-icon')
-        img.src = element.icon
 
-        const span = document.createElement('span')
-        span.classList.add('course-name')
-        span.textContent = element.abbreviation
+        const div = createDiv('course-content', element.abbreviation.toLowerCase())
+    
+        const img = createImg('course-icon', element.icon)
+
+        const span = createSpan('course-name', element.abbreviation.toUpperCase())
 
         div.appendChild(img)
         div.appendChild(span)
-        div.id = element.abbreviation.toLowerCase()
         
         container.appendChild(div)
 
-        div.addEventListener('click', (el) => {
-            el.preventDefault()
+        div.addEventListener('click', (e) => {
+            e.preventDefault()
+
             const course = div.id
 
             localStorage.setItem('course', course)
@@ -37,5 +35,7 @@ const createCards = async (json) => {
         })
     });
 }
+
+
 
 createCards(data)
