@@ -1,7 +1,7 @@
 'use strict'
 
-const getStudentsList = async () => {
-    const url = 'http://localhost:3030/alunos/curso/:curso'
+const getStudentsList = async (course) => {
+    const url = `http://localhost:3030/alunos/curso/${course}`
     const response = await fetch(url)
     const data = response.json()
 
