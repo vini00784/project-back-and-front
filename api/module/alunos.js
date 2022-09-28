@@ -696,12 +696,15 @@ const getStudentsName = (code) => {
         if(registration != '') {
             alunos.forEach(item => {
                 if(item.matricula.includes(registration)) {
-                    studentsName.push(item.nome)
+                    studentsName.push({
+                        name: item.nome,
+                        image: item.foto
+                    })
                     error = false
                 }
             })
         }
-        student.name = studentsName
+        student.student = studentsName
     }
 
     if(error) {
