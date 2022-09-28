@@ -743,7 +743,12 @@ const getStudentByCourse = (code) => {
             alunos.forEach(item => {
                 item.curso.forEach(item2 => {
                     if(course.toLowerCase() == item2.sigla.toLocaleLowerCase()) {
-                        studentsName.push(item.nome)
+                        studentsName.push({
+                            name: item.nome,
+                            registration: item.matricula,
+                            image: item.foto,
+                            status: item.status
+                        })
                         error = false
                     }
                     students.students = studentsName
@@ -814,7 +819,6 @@ const filterStudentByStatus = (studentCourse, studentStatus) => {
     }
 }
 
-console.log(filterStudentByStatus('rds', 'cursando'))
 
 // Função para buscar os alunos com base no ano de conclusão
 const getStudentsByConclusionYear = (code) => {

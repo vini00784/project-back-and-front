@@ -8,8 +8,4 @@ const getStudentsList = async (course) => {
     return data
 }
 
-const getStudentsByStatus = async (course) => {
-    
-}
-
 export { getStudentsList }

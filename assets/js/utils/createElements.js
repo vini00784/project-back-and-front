@@ -1,6 +1,6 @@
 'use strict'
 
-const createDiv = (className, id) => {
+const createDiv = (className, id = '') => {
     const div = document.createElement('div');
     div.classList.add(className);
     div.id = id;
