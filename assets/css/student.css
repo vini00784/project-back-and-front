@@ -1,4 +1,41 @@
 main {
     display: flex;
     flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+    padding: 95px;
+    gap: 5%;
+}
+
+.student-profile {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+}
+.student-image {
+    height: 400px;
+    width: 400px;
+}
+.student-name {
+    font-family: 'Poppins', sans-serif;
+    color: var(--default-color);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.scores {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
 }
