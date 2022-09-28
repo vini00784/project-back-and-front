@@ -25,6 +25,15 @@ const createProfile = (json) => {
 
 createProfile(studentInfo)
 
-const showScores = () => {
+const showScores = (json) => {
+    const { subjects } = json
+    const scoresContainer = document.querySelector('.scores')
     
+    subjects.forEach(element => {
+        console.log(element.media);
+        const gradesContainer = createDiv('subject-score')
+    })
+
 }
+
+showScores(studentSubjects)
