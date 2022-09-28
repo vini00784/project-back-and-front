@@ -865,8 +865,8 @@ const getSubjects = (code) => {
                     item.curso.forEach(item2 => {
                         item2.disciplinas.forEach(item3 => {
                             studentsSubjects.push({
-                                nome : item3.nome,
-                                media : item3.media
+                                name : item3.nome,
+                                grade : item3.media
                             })
                             // studentsSubjects.push(item3.nome)
                             // studentsSubjects.push(item3.media)
