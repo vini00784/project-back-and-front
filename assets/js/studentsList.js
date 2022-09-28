@@ -54,7 +54,7 @@ const createStudentsCards = async (json) => {
 
             localStorage.setItem('student', student)
 
-            location.href= './assets/pages/student.html'
+            location.href= './student.html'
         })
     })
 }
