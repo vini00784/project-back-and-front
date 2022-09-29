@@ -21,6 +21,7 @@ ul, ol {
 
 :root {
     --default-color: #3347B0;
+    --secondary-color: #BCC2E5;
     --background-finished: #E5B657;
 
     --approved-color: #3347B0;
