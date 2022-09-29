@@ -22,4 +22,8 @@ ul, ol {
 :root {
     --default-color: #3347B0;
     --background-finished: #E5B657;
+
+    --approved-color: #3347B0;
+    --exam-color: #E5B657;
+    --disapproved-color: #C11010;
 }
