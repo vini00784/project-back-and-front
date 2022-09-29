@@ -29,6 +29,9 @@ main {
     display: flex;
     gap: 15px;
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--default-color);
 }
 .studying, .finished {
     display: flex;
@@ -55,6 +58,8 @@ main {
     justify-content: center;
     margin-top: 30px;
     gap: 80px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .student {
@@ -84,5 +89,12 @@ main {
 .student-image {
     height: 200px;
     width: 200px;
+}
+
+/* MENU */
+
+.menu {
+    background-color: var(--secondary-color);
+    border: none;
 }
 
