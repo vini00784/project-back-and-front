@@ -37,9 +37,9 @@ const createStudentsCards = async (json) => {
         const spanName = createSpan('student-name', element.name)
 
         if(element.status.toLowerCase() == 'cursando') {
-            card.classList.add('card-yellow')
-        } else if(element.status.toLowerCase() == 'finalizado') {
             card.classList.add('card-blue')
+        } else if(element.status.toLowerCase() == 'finalizado') {
+            card.classList.add('card-yellow')
         }
 
         card.appendChild(image)
