@@ -937,6 +937,7 @@ module.exports = {
     getAllStudents,
     getStudentByCourse,
     getStudentByStatus,
+    filterStudentsByStatus,
     getStudentsByConclusionYear,
     getSubjects
 }
