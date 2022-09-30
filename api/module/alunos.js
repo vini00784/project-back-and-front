@@ -685,6 +685,25 @@ var alunos = [
         }
     ];
 
+
+const getStudents = () => {
+    let studentsName = []
+    let students = {}
+    let error = true
+
+    alunos.forEach(item => {
+        studentsName.push(item)
+        error = false
+    })
+    students.students = studentsName
+
+    if(error) {
+        return false
+    } else {
+        return students
+    }
+}
+
 // Função que faz o get do aluno com base na matrícula
 const getStudentsName = (code) => {
     let registration = code
@@ -818,7 +837,7 @@ const filterStudentsByStatus = (json, status) => {
         return filteredJson
     }
 }
-console.log(filterStudentsByStatus(getStudentByCourse('ds'), 'status'))
+// console.log(filterStudentsByStatus(getStudentByCourse('rds'), 'status'))
 
 // Função para buscar os alunos com base no ano de conclusão
 const getStudentsByConclusionYear = (code) => {
@@ -847,6 +866,36 @@ const getStudentsByConclusionYear = (code) => {
         return students
     }
 }
+
+// const filterStudentByYear = (json, year) => {
+//     let studentsName = []
+//     let studentsNameJson = json
+//     let studentConclusionYear = year
+//     let filteredJson = {}
+//     let error = true
+
+//     if(studentConclusionYear == 'ano de conclusão') {
+//         return studentsNameJson
+//     }
+
+//     const {students} = json
+//     students.forEach(item => {
+//         item.curso.forEach(item2 => {
+//             if(item2.conclusao == year) {
+//                 studentsName.push(item)
+//                 error = false
+//             }
+//             filteredJson.students = studentsName
+//         })
+//     })
+
+//     if(error) {
+//         return false
+//     } else {
+//         return filteredJson
+//     }
+// }
+
 
 // Função para buscar as disciplinas e suas média com base na matrícula do aluno
 const getSubjects = (code) => {
