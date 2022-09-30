@@ -7,6 +7,7 @@ const { getAllStudents,
         getStudentsName, 
         getStudentByCourse, 
         getStudentByStatus,
+        filterStudentsByStatus,
         getStudentsByConclusionYear,
         getSubjects } 
         = require('./module/alunos.js')
