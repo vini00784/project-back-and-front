@@ -16,7 +16,7 @@ courses.forEach(element => {
     }
 });
 
-let studentsList = await getStudentsList(course);
+let studentsList = await getStudentsList(course)
 
 const changeTitle = () => {
     const title = document.querySelector('.title')
@@ -60,3 +60,29 @@ const createStudentsCards = async (json) => {
 }
 
 createStudentsCards(studentsList)
+
+const clearCards = () => {
+    const cards = document.querySelectorAll('.student')
+    cards.forEach((card) => card.remove())
+}
+
+const statusFilterSelect = document.querySelector('.status-menu')
+let statusSelectValue = document.querySelector('.status-menu').value
+
+statusFilterSelect.addEventListener('change', async () => {
+    statusSelectValue = document.querySelector('.status-menu').value
+    
+
+    studentsList = await getStudentsList(course)
+    const { students } = studentsList
+    
+
+    clearCards()
+
+    if(students) {
+        console.log(students);
+
+        // A linha seguinte deveria refazer os cards com base no status que foi selecionado no select
+        students.forEach((item) => createStudentsCards(item))
+    }
+})
