@@ -25,6 +25,34 @@ main {
     align-items: center;
     background-color: #BCC2E5;
 }
+.menus-container {
+    display: flex;
+    margin-left: 95px;
+    font-size: 1rem;
+    width: fit-content;
+    gap: 150px;
+}
+.status-menu,
+.conclusion-year-menu {
+    border: none;
+    background: none;
+    color: var(--default-color);
+    appearance: none;
+    outline: none;
+
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+.status-menu option,
+.conclusion-year-menu option {
+    background-color: var(--default-color);
+    color: #FFFFFF;
+    padding: 25px;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
 .subtitle {
     display: flex;
     gap: 15px;
@@ -36,9 +64,6 @@ main {
 .studying, .finished {
     display: flex;
     gap: 8px;
-}
-.menu {
-    margin-left: 95px;
 }
 .subtitle {
     margin-right: 95px;
