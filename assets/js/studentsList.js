@@ -1,6 +1,6 @@
 'use strict'
 
-import { getStudentsList } from "./studentsListFetch.js"
+import { getStudentsList, filterStudentsList } from "./studentsListFetch.js"
 import { getCourses } from "./coursesFetch.js"
 import { createDiv, createImg, createSpan } from "./utils/createElements.js"
 
@@ -16,7 +16,7 @@ courses.forEach(element => {
     }
 });
 
-let studentsList = await getStudentsList(course)
+let { students } = await getStudentsList(course)
 
 const changeTitle = () => {
     const title = document.querySelector('.title')
@@ -25,9 +25,9 @@ const changeTitle = () => {
 
 changeTitle()
 
-const createStudentsCards = async (json) => {
+const createStudentsCards = async (student) => {
     const container = document.querySelector('.content-container')
-    const { students } = json
+    const  students  = student
 
     students.forEach(element => {
         const card = document.createElement('div')
@@ -59,7 +59,7 @@ const createStudentsCards = async (json) => {
     })
 }
 
-createStudentsCards(studentsList)
+createStudentsCards(students)
 
 const clearCards = () => {
     const cards = document.querySelectorAll('.student')
@@ -73,16 +73,12 @@ statusFilterSelect.addEventListener('change', async () => {
     statusSelectValue = document.querySelector('.status-menu').value
     
 
-    studentsList = await getStudentsList(course)
-    const { students } = studentsList
+    const { students } = await filterStudentsList(course, statusSelectValue.toLowerCase())
     
 
     clearCards()
 
     if(students) {
-        console.log(students);
-
-        // A linha seguinte deveria refazer os cards com base no status que foi selecionado no select
-        students.forEach((item) => createStudentsCards(item))
+        createStudentsCards(students)
     }
 })
