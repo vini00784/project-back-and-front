@@ -67,10 +67,9 @@ const clearCards = () => {
 }
 
 const statusFilterSelect = document.querySelector('.status-menu')
-let statusSelectValue = document.querySelector('.status-menu').value
 
 statusFilterSelect.addEventListener('change', async () => {
-    statusSelectValue = document.querySelector('.status-menu').value
+    let statusSelectValue = document.querySelector('.status-menu').value
     
 
     const { students } = await filterStudentsList(course, statusSelectValue.toLowerCase())
