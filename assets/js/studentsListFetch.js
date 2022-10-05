@@ -1,7 +1,7 @@
 'use strict'
 
 const getStudentsList = async (course) => {
-    const url = `http://localhost:3030/alunos/curso/?curso=${course}`
+    const url = `https://api-lions-school.netlify.app/.netlify/functions/api/alunos/curso/?curso=${course}`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -9,7 +9,7 @@ const getStudentsList = async (course) => {
 }
 
 const filterStudentsList = async (course, status) => {
-    const url = `http://localhost:3030/alunos/curso/?curso=${course}&&status=${status}`
+    const url = `https://api-lions-school.netlify.app/.netlify/functions/api/alunos/curso/?curso=${course}&&status=${status}`
     const response = await fetch(url)
     const data = await response.json()
 

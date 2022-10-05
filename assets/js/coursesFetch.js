@@ -2,7 +2,7 @@
 
 // Função para o get dos cursos
 const getCourses = async () => {
-    const url = 'http://localhost:3030/cursos'
+    const url = 'https://api-lions-school.netlify.app/.netlify/functions/api/cursos'
     const response = await fetch(url)
     const data = await response.json()
 
