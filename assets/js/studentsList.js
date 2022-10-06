@@ -1,6 +1,6 @@
 'use strict'
 
-import { getStudentsList, filterStudentsList } from "./studentsListFetch.js"
+import { getStudentsList, filterStudentsList, getYears } from "./studentsListFetch.js"
 import { getCourses } from "./coursesFetch.js"
 import { createDiv, createImg, createSpan } from "./utils/createElements.js"
 
