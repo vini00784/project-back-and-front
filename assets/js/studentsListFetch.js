@@ -16,4 +16,12 @@ const filterStudentsList = async (course, status, conclusionYear) => {
     return data
 }
 
-export { getStudentsList, filterStudentsList }
+const getYears = async (course, status) => {
+    const url = `https://api-lions-school.netlify.app/.netlify/functions/api/conclusao/?curso=${course}&&status=${status}`
+    const response = await fetch(url)
+    const data = await response.json()
+
+    return data
+}
+
+export { getStudentsList, filterStudentsList, getYears }
