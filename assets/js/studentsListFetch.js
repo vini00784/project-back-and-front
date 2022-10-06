@@ -24,4 +24,8 @@ const getYears = async (course, status) => {
     return data
 }
 
-export { getStudentsList, filterStudentsList, getYears }
+export { 
+    getStudentsList, 
+    filterStudentsList, 
+    getYears 
+}
