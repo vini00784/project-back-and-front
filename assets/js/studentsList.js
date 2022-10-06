@@ -65,6 +65,10 @@ const clearCards = () => {
     const cards = document.querySelectorAll('.student')
     cards.forEach((card) => card.remove())
 }
+const clearYearOptions = () => {
+    const option = document.querySelectorAll('.year-option')
+    option.forEach((option) => option.remove())
+}
 
 const statusFilterSelect = document.querySelector('.status-menu')
 
