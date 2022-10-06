@@ -71,12 +71,33 @@ const clearYearOptions = () => {
 }
 
 const statusFilterSelect = document.querySelector('.status-menu')
+let statusSelectValue = document.querySelector('.status-menu').value
+const yearsFilterSelect = document.querySelector('.conclusion-year-menu')
+let yearsSelectValue = document.querySelector('.conclusion-year-menu')
+
+const createYearsOption = async (year) => {
+    const yearOption = document.createElement('option')
+    yearOption.value = year
+    yearOption.textContent = year
+    yearOption.classList.add('year-option')
+
+    yearsFilterSelect.appendChild(yearOption)
+}
+
+const { years } = await getYears(course, statusSelectValue)
+years.forEach(item => createYearsOption(item))
 
 statusFilterSelect.addEventListener('change', async () => {
-    let statusSelectValue = document.querySelector('.status-menu').value
+    statusSelectValue = document.querySelector('.status-menu').value
+    yearsSelectValue = document.querySelector('.conclusion-year-menu').value
     
 
-    const { students } = await filterStudentsList(course, statusSelectValue.toLowerCase())
+    const { students } = await filterStudentsList(course, statusSelectValue.toLowerCase(), yearsSelectValue)
+    years = await getYears(course, statusSelectValue) // Trocar isso aqui pois a variável está definida como constante
+    clearYearOptions()
+
+    years.forEach(item => createYearsOption(item))
+    // createYearsOption(years)
     
 
     clearCards()
@@ -84,4 +105,18 @@ statusFilterSelect.addEventListener('change', async () => {
     if(students) {
         createStudentsCards(students)
     }
+})
+
+yearsFilterSelect.addEventListener('change', async () => {
+    yearsSelectValue = document.querySelector('.conclusion-year-menu').value
+    statusSelectValue = document.querySelector('.status-menu').value
+
+    const { students } = await filterStudentsList(course, statusSelectValue.toLowerCase(), yearsSelectValue)
+    
+    clearCards()
+    
+    students.forEach(item => {
+        createStudentsCards(item)
+    })
+    
 })
