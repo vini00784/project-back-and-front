@@ -93,7 +93,7 @@ statusFilterSelect.addEventListener('change', async () => {
     
 
     const { students } = await filterStudentsList(course, statusSelectValue.toLowerCase(), yearsSelectValue)
-    years = await getYears(course, statusSelectValue) // Trocar isso aqui pois a variável está definida como constante
+    // years = await getYears(course, statusSelectValue) // Trocar isso aqui pois a variável está definida como constante
     clearYearOptions()
 
     years.forEach(item => createYearsOption(item))
@@ -107,16 +107,16 @@ statusFilterSelect.addEventListener('change', async () => {
     }
 })
 
-yearsFilterSelect.addEventListener('change', async () => {
-    yearsSelectValue = document.querySelector('.conclusion-year-menu').value
-    statusSelectValue = document.querySelector('.status-menu').value
+// yearsFilterSelect.addEventListener('change', async () => {
+//     yearsSelectValue = document.querySelector('.conclusion-year-menu').value
+//     statusSelectValue = document.querySelector('.status-menu').value
 
-    const { students } = await filterStudentsList(course, statusSelectValue.toLowerCase(), yearsSelectValue)
+//     const { students } = await filterStudentsList(course, statusSelectValue.toLowerCase(), yearsSelectValue)
     
-    clearCards()
+//     clearCards()
     
-    students.forEach(item => {
-        createStudentsCards(item)
-    })
+//     students.forEach(item => {
+//         createStudentsCards(item)
+//     })
     
-})
+// })
